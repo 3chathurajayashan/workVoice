@@ -8,7 +8,7 @@ import connectDB from "./Configs/db.js";
 import { Server } from "socket.io";
 import { initSocket } from "./Configs/socket.js";
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
 
 // 1. create server
 const server = http.createServer(app);
