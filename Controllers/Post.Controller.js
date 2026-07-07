@@ -14,23 +14,25 @@ class PostController {
     }
   }
 
-  async getFeed(req, res, next) {
-    try {
-      const { page, limit } = req.query;
+ async getFeed(req, res, next) {
+  try {
+    const { page, limit } = req.query;
 
-      const posts = await postService.getFeed(
-        Number(page) || 1,
-        Number(limit) || 10
-      );
+    const posts = await postService.getFeed(
+      Number(page) || 1,
+      Number(limit) || 10,
+      req.user.userId
+    );
 
-      res.status(200).json({
-        success: true,
-        posts,
-      });
-    } catch (error) {
-      next(error);
-    }
+    res.status(200).json({
+      success: true,
+      posts,
+    });
+
+  } catch (error) {
+    next(error);
   }
+}
 
   async getById(req, res, next) {
     try {

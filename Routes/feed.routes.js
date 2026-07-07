@@ -1,6 +1,7 @@
 import express from "express";
 import { getFeed } from "../Controllers/feed.controller.js";
 import {protect} from "../Middlewares/auth.js";
+import PostController from "../Controllers/Post.Controller.js";
 
 const router = express.Router();
 
@@ -38,6 +39,10 @@ const router = express.Router();
  *       401:
  *         description: Unauthorized
  */
-router.get("/", protect, getFeed);
+router.get(
+  "/",
+  protect,
+  PostController.getFeed
+);
 
 export default router;
