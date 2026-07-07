@@ -17,6 +17,7 @@ import saveRoutes from './Routes/Save.Routes.js'
 import companyRoutes from './Routes/company.routes.js'
 import searchRoutes from './Routes/Search.Routes.js'
 import profileRoutes from './Routes/Profile.Routes.js'
+import FeedRoutes from './Routes/feed.routes.js'
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
@@ -57,5 +58,6 @@ app.use("/api/v1/notifications", notificationRoutes);
 app.use("/api/v1/saved", saveRoutes);
 app.use("/api/v1/company", commentRoutes);
 app.use("/api/v1/search", searchRoutes);
+app.use("/api/v1/feed",FeedRoutes );
 app.use("/api/v1/profile", profileRoutes);
 export default app;
